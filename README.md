@@ -2,8 +2,6 @@
 
 Week 02 Minor Project (Web Development): a fully responsive landing page for **PulseX**, a fictional smartwatch, built with **Tailwind CSS**, **CSS3**, **Flexbox** and **CSS Grid**.
 
-## Live Demo
-Add your GitHub Pages link here after deploying, e.g. `https://<your-username>.github.io/<repo-name>/`
 
 ## Sections
 1. **Navigation bar** – logo, links, "Buy Now" button, hamburger menu on mobile
