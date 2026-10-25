@@ -1,0 +1,143 @@
+/* ==========================================================
+   PulseX Landing Page - Custom CSS3 (complements Tailwind)
+   ========================================================== */
+
+:root {
+  --brand: #4f46e5;
+  --brand-dark: #312e81;
+  --radius: 1rem;
+}
+
+/* Hero background: layered gradients */
+.hero-bg {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(99, 102, 241, 0.15), transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(34, 211, 238, 0.15), transparent 40%),
+    #ffffff;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(90deg, #4f46e5, #06b6d4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Floating animation for the hero product */
+.float-anim { animation: float 5s ease-in-out infinite; }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-14px); }
+}
+
+/* Nav link underline effect */
+.nav-link { position: relative; padding-bottom: 4px; }
+.nav-link::after {
+  content: "";
+  position: absolute; left: 0; bottom: 0;
+  width: 0; height: 2px;
+  background: var(--brand);
+  transition: width 0.25s ease;
+}
+.nav-link:hover::after { width: 100%; }
+
+/* Cards */
+.card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -15px rgba(79, 70, 229, 0.25);
+}
+.card-title { margin-top: 1rem; font-size: 1.125rem; font-weight: 700; color: #0f172a; }
+.card-text  { margin-top: 0.5rem; color: #475569; line-height: 1.6; }
+
+.icon-box {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 3rem; height: 3rem;
+  font-size: 1.5rem;
+  background: #eef2ff;
+  border-radius: 0.75rem;
+}
+
+/* Benefits */
+.benefit-panel {
+  background: linear-gradient(135deg, #4f46e5 0%, #312e81 100%);
+  box-shadow: 0 25px 50px -20px rgba(49, 46, 129, 0.6);
+}
+.check {
+  flex-shrink: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 1.75rem; height: 1.75rem;
+  border-radius: 9999px;
+  background: #e0e7ff; color: var(--brand);
+  font-weight: 700; font-size: 0.875rem;
+}
+
+/* Testimonials */
+.avatar {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.5rem; height: 2.5rem;
+  border-radius: 9999px;
+  color: #fff; font-size: 0.8rem; font-weight: 700;
+}
+
+/* Pricing */
+.price-card {
+  position: relative;
+  display: flex; flex-direction: column;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.price-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.2); }
+.price-card--featured {
+  background: linear-gradient(160deg, #4f46e5, #312e81);
+  color: #fff;
+  border-color: transparent;
+}
+@media (min-width: 768px) {
+  .price-card--featured { transform: scale(1.05); }
+  .price-card--featured:hover { transform: scale(1.05) translateY(-6px); }
+}
+
+.btn-outline {
+  display: block; margin-top: 2rem;
+  text-align: center; font-weight: 600;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--brand);
+  border-radius: 9999px;
+  color: var(--brand);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.btn-outline:hover { background: var(--brand); color: #fff; }
+
+/* CTA banner */
+.cta-banner { background: linear-gradient(120deg, #4f46e5, #7c3aed 60%, #06b6d4); }
+
+/* Footer social icons */
+.social {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.25rem; height: 2.25rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff; font-size: 0.8rem; font-weight: 700;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.social:hover { background: var(--brand); transform: translateY(-3px); }
+
+/* Offset anchor scrolling for the fixed header */
+section[id] { scroll-margin-top: 4rem; }
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .float-anim { animation: none; }
+  * { transition: none !important; }
+}
